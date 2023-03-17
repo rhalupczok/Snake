@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>SNAKE</h1>
+        <menu id="menu" class="menu">
+            <button id="play-btn" class="btn">PLAY</button>
+            <h2>Level</h2>
+            <div id="level">
+                <button id="easy-btn" class="btn">EASY</button>
+                <button id="medium-btn" class="btn choosen">MEDIUM</button>
+                <button id="hard-btn" class="btn">HARD</button>
+                <button id="crazy-btn" class="btn">CRAZY</button>
+            </div>
+
+            
+        </menu>
+        <div id="canvas-window" class="game hidden">
+            <canvas id="canvas" width="400" height="400"> </canvas> 
+            <p id="score">SCORE: </p>
+            <div id="game-window-buttons">
+                <button id="reset-btn" class="btn btn-size">RESET GAME</button>
+                <button id="menu-btn" class="btn btn-size">MAIN MENU</button>
+            </div>
+
+
+        </div>
+    </main>
+    
+    <script src="snake.js"></script>
+</body>
+</html>

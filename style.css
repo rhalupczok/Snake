@@ -1,0 +1,87 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+menu {
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    width: 800px;
+    height: 800px;
+    background: black;
+    border: 5px solid white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    color: white;
+    margin: 2rem auto;
+}
+
+h2 {
+    color: white;
+    margin-top: 10rem;
+}
+
+.level {
+    width: fit-content;
+}
+
+.btn {
+    display: block;
+    color: black;
+    background: white;
+    margin: 1rem auto;
+    font-size: 2rem;
+    width: 200px;
+    height: 60px;
+    border: 5px solid white;
+    border-radius: 1rem;
+}
+
+.btn:hover {
+cursor: pointer;
+color: white;
+background: black;
+}
+
+.btn.choosen {
+color: white;
+background: black;
+}
+
+#canvas-window > p {
+    font-size: 2rem;
+    color: white;
+}
+
+#game-window-buttons {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn-size {
+    width: 250px;
+}
+
+canvas {
+    border: 3px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
