@@ -21,6 +21,7 @@
             let menuBtn;
             let scoreTable;
             let touchDirection = 39 ;
+            let virtualControl;
             
             let screenTouch;
 
@@ -196,6 +197,46 @@
         
             }
 
+            function virtualKeyDown(e){
+                console.log(e.target.id)
+                if (e.keyCode === 39 && pauseGame) return;
+                
+                if (directionFlag == true) return;
+                
+                if (e.target.id === "left-btn" && currentDirection === "right" && (!pauseGame)) return;
+                if (e.target.id === "up-btn"  && currentDirection === "down" && (!pauseGame)) return;
+                if (e.target.id === "right-btn"  && currentDirection === "left" && (!pauseGame)) return;
+                if (e.target.id === "down-btn"  && currentDirection === "up" && (!pauseGame)) return;
+                if (pauseGame) pauseGame = false;
+
+                directionFlag = true;
+                
+                switch(e.target.id) {
+                    case "left-btn":
+                        dy = 0;
+                        dx = -10;
+                        currentDirection = "left";
+                        break;
+                    case "up-btn":
+                        dy = -10;
+                        dx = 0;
+                        currentDirection = "up";
+                        break;
+                    case "right-btn":
+                        dy = 0;
+                        dx = 10;
+                        currentDirection = "right";
+                        break;
+                    case "down-btn":
+                        dy = 10;
+                        dx = 0;
+                        currentDirection = "down";
+                        break;
+                }
+                          
+        
+            }
+
             function randomFood() {
                 function randV(min, max) {
                     return Math.floor( (Math.random() * (max - min) + min)/ wallSize) * wallSize;
@@ -313,7 +354,12 @@
                 level = Array.from(document.getElementById("level").children);
                 level.forEach(element => {
                 element.addEventListener("click", lvl);
-                })
+                });
+
+                virtualControl = Array.from(document.querySelectorAll(".control-buttons button"));
+                virtualControl.forEach(element => {
+                    element.addEventListener("click", virtualKeyDown);
+                    });
 
                 
 
