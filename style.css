@@ -86,3 +86,19 @@ canvas {
     display: none;
 }
 
+@media screen and (max-width: 800px) {
+    main {
+        width: 80vw;
+    }
+
+    .btn-size {
+        width: 150px;
+        font-size: 1rem;
+        height: 30px;
+    }
+
+    canvas {
+        width: 90%;
+        max-width: 400px;
+    }
+}
