@@ -20,7 +20,8 @@
             let resetBtn;
             let menuBtn;
             let scoreTable;
-
+            let touchDirection = 39 ;
+            
             let screenTouch;
 
 
@@ -99,6 +100,56 @@
                 let headY = snake[0].y + dy;
                 snake.unshift( {x: headX, y:headY} );
                 snake.pop();
+            }
+
+
+            function touchDown(e) {
+                console.log(e);
+                if (e.offsetX > snake[0].x && (currentDirection === "up" || currentDirection === "down")) {touchDirection = 39};
+                if (e.offsetY > snake[0].y && (currentDirection === "left" || currentDirection === "right")) {touchDirection = 40};
+                if (e.offsetX < snake[0].x && (currentDirection === "up" || currentDirection === "down")) {touchDirection = 37};
+                if (e.offsetY < snake[0].y && (currentDirection === "left" || currentDirection === "right")) {touchDirection = 38};
+
+
+                if (touchDirection === 39 && pauseGame) return;
+                
+                if (directionFlag == true) return;
+                
+                if (touchDirection === 37 && currentDirection === "right" && (!pauseGame)) return;
+                if (touchDirection === 38 && currentDirection === "down" && (!pauseGame)) return;
+                if (touchDirection === 39 && currentDirection === "left" && (!pauseGame)) return;
+                if (touchDirection === 40 && currentDirection === "up" && (!pauseGame)) return;
+                if (pauseGame) pauseGame = false;
+
+                directionFlag = true;
+                
+                switch(touchDirection) {
+                    case 37:
+                    case 65:
+                        dy = 0;
+                        dx = -10;
+                        currentDirection = "left";
+                        break;
+                    case 38:
+                    case 87:
+                        dy = -10;
+                        dx = 0;
+                        currentDirection = "up";
+                        break;
+                    case 39:
+                    case 68:
+                        dy = 0;
+                        dx = 10;
+                        currentDirection = "right";
+                        break;
+                    case 40:
+                    case 83:
+                        dy = 10;
+                        dx = 0;
+                        currentDirection = "down";
+                        break;
+                }
+
             }
 
 
@@ -264,10 +315,11 @@
                 element.addEventListener("click", lvl);
                 })
 
-                screenTouch.addEventListener("touchstart", (e) => console.log(e));
+                
 
                 canvas = document.getElementById("canvas");
                 context2d = canvas.getContext("2d");
                 document.addEventListener("keydown", keyDown)
+                canvas.addEventListener("click", touchDown);
                 resetGame();
             }
