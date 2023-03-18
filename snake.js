@@ -21,6 +21,8 @@
             let menuBtn;
             let scoreTable;
 
+            let screenTouch;
+
 
             let menuWindow;
             let canvasWindow;
@@ -262,6 +264,7 @@
                 element.addEventListener("click", lvl);
                 })
 
+                screenTouch.addEventListener("touchstart", (e) => console.log(e));
 
                 canvas = document.getElementById("canvas");
                 context2d = canvas.getContext("2d");
