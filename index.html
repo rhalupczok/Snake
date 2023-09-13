@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Snake</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <menu id="menu" class="menu">
+                <h1>SNAKE</h1>
+                <button id="play-btn" class="btn">PLAY</button>
+                <h2>Level</h2>
+                <div id="level">
+                    <button id="easy-btn" class="btn level-btn">EASY</button>
+                    <button id="medium-btn" class="btn level-btn choosen">
+                        MEDIUM
+                    </button>
+                    <button id="hard-btn" class="btn level-btn">HARD</button>
+                </div>
+            </menu>
+            <div id="game-window" class="game hidden">
+                <canvas id="canvas"> </canvas>
+                <p id="score"></p>
+                <div id="game-window-buttons">
+                    <div class="control-buttons hidden">
+                        <button id="ArrowLeft" class="btn control-btn">
+                            ←
+                        </button>
+                        <button id="ArrowUp" class="btn control-btn">↑</button>
+                        <button id="ArrowRight" class="btn control-btn">
+                            →
+                        </button>
+                        <button id="ArrowDown" class="btn control-btn">
+                            ↓
+                        </button>
+                    </div>
+                    <div id="menu-buttons">
+                        <button id="reset-btn" class="btn btn-size">
+                            RESET GAME
+                        </button>
+                        <button id="arrows-btn" class="btn btn-size">
+                            Arrows
+                        </button>
+                        <button id="menu-btn" class="btn btn-size">
+                            MAIN MENU
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="snake.js"></script>
+    </body>
+</html>
