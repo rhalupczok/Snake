@@ -228,8 +228,10 @@ const runningGame = () => {
 };
 
 levelSwitch = (e) => {
-    if (e.target && e.target.classList.contains("level-btn")) {
-        const levelButtons = levelBtns.getElementsByClassName("level-btn");
+    if (e.target && e.target.classList.contains("menu__button--level")) {
+        const levelButtons = levelBtns.getElementsByClassName(
+            "menu__button--level"
+        );
         for (const button of levelButtons) {
             button.classList.remove("choosen");
         }

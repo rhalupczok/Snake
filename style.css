@@ -27,7 +27,7 @@ main {
     position: relative;
 }
 
-menu {
+.menu {
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -37,7 +37,7 @@ menu {
     height: 100%;
 }
 
-.menu--snake {
+.menu__picture {
     position: absolute;
     width: 100px;
     left: 10px;

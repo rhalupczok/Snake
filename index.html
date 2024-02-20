@@ -29,23 +29,36 @@
     </head>
     <body>
         <main>
-            <menu id="menu" class="menu">
-                <h1>SNAKE</h1>
+            <section id="menu" class="menu">
+                <h1 class="menu__header">SNAKE</h1>
                 <img
-                    class="menu--snake"
+                    class="menu__picture"
                     src="favicon/android-chrome-512x512.png"
-                    alt="Snake"
+                    alt="Snake head"
                 />
-                <button id="play-btn" class="btn">PLAY</button>
+                <button id="play-btn" class="menu__button btn">PLAY</button>
                 <h2>Level</h2>
                 <div id="level">
-                    <button id="easy-btn" class="btn level-btn">EASY</button>
-                    <button id="medium-btn" class="btn level-btn choosen">
+                    <button
+                        id="easy-btn"
+                        class="menu__button btn menu__button--level"
+                    >
+                        EASY
+                    </button>
+                    <button
+                        id="medium-btn"
+                        class="menu__button btn menu__button--level choosen"
+                    >
                         MEDIUM
                     </button>
-                    <button id="hard-btn" class="btn level-btn">HARD</button>
+                    <button
+                        id="hard-btn"
+                        class="menu__button btn menu__button--level"
+                    >
+                        HARD
+                    </button>
                 </div>
-            </menu>
+            </section>
             <div id="game-window" class="game hidden">
                 <canvas id="canvas"> </canvas>
                 <p id="score"></p>
